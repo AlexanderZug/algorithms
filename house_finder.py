@@ -19,6 +19,6 @@ def house_finder(length: int, houses: List[str]) -> List[int]:
         result[house_index] = house_index - last_null
     return result
 
-
+#
 if __name__ == '__main__':
     print(*house_finder(int(input()), input().split()))
