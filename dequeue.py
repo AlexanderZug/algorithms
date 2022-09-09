@@ -4,7 +4,7 @@ class DeQueue:
     def __init__(self, max_size: int):
         self.queue = [None] * max_size
         self.size = 0
-        self.front = - 1
+        self.front = -1
         self.back = 0
 
     def push_back(self, value: str):
