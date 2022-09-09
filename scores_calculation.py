@@ -6,10 +6,11 @@ SYMBOLS = '123456789'
 
 
 def scores_calculation(keys: int, template: str) -> int:
-    return sum(True
-               for symbol, amount in Counter(template).items()
-               if symbol in SYMBOLS and amount <= keys
-               )
+    return sum(
+        True
+        for symbol, amount in Counter(template).items()
+        if symbol in SYMBOLS and amount <= keys
+    )
 
 
 if __name__ == "__main__":
