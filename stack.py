@@ -1,4 +1,5 @@
-# id 70169102
+# id 70249471
+
 import operator
 
 OPERATORS = {
@@ -11,14 +12,14 @@ OPERATORS = {
 
 class Stack:
     def __init__(self, array=None):
-        self.stack = [] if array is None else array
+        self._stack = [] if array is None else array
 
     def pop(self):
-        return self.stack.pop()
+        return self._stack.pop()
 
     def push(self, value):
-        self.stack.append(value)
-        return self.stack
+        self._stack.append(value)
+        return self._stack
 
 
 def is_number(value):
@@ -40,7 +41,7 @@ def main():
         first = stack.pop()
         if item in OPERATORS:
             stack.push(OPERATORS[item](first, second))
-    print(0 if len(stack.stack) == 0 else stack.pop())
+    print(0 if len(stack._stack) == 0 else stack.pop())
 
 
 if __name__ == '__main__':
