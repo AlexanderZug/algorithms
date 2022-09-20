@@ -7,12 +7,12 @@ def quick_sort(array: List[Any]) -> List[Any]:
         if start >= end:
             return
 
-        middle = array[(start + end) // 2]
+        pivot = array[(start + end) // 2]
         left, right = start, end
         while left <= right:
-            while array[left] < middle:
+            while array[left] < pivot:
                 left += 1
-            while array[right] > middle:
+            while array[right] > pivot:
                 right -= 1
             if left <= right:
                 array[left], array[right] = array[right], array[left]
@@ -20,7 +20,6 @@ def quick_sort(array: List[Any]) -> List[Any]:
                 right -= 1
         sort_step(start, right)
         sort_step(left, end)
-
     sort_step(0, len(array) - 1)
     return array
 
@@ -28,8 +27,8 @@ def quick_sort(array: List[Any]) -> List[Any]:
 if __name__ == '__main__':
     print(
         *[name for _, _, name in quick_sort([
-            (lambda name, tasks, fines:
-             (-int(tasks), int(fines), name)
+            (lambda logo, tasks, fine:
+             (-int(tasks), int(fine), logo)
              )(
                 *input().split()
             ) for _ in range(int(input()))
