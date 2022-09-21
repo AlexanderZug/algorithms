@@ -1,5 +1,6 @@
 # id 70249356
 
+
 class Deque:
     def __init__(self, max_size: int):
         self._queue = [None] * max_size
