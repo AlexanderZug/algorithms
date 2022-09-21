@@ -1,4 +1,4 @@
-# ID 70653764
+# ID 70696519
 def broken_search(nums, target) -> int:
     left = 0
     right = len(nums) - 1
@@ -8,10 +8,8 @@ def broken_search(nums, target) -> int:
             return left
         middle = left + (right - left) // 2
         numbers_middle = nums[middle]
-        if numbers_middle == target:
-            return middle
         if (
-                (numbers_left < target or numbers_left == target) and (
+                numbers_left <= target and (
                 target < numbers_middle or numbers_middle < numbers_left
         )
         ) or (
@@ -20,8 +18,3 @@ def broken_search(nums, target) -> int:
         else:
             left = middle + 1
     return -1
-
-
-def test():
-    arr = [19, 21, 100, 101, 1, 4, 5, 7, 12]
-    assert broken_search(arr, 5) == 6

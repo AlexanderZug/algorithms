@@ -33,5 +33,5 @@ if __name__ == '__main__':
                 *input().split()
             ) for _ in range(int(input()))
         ])],
-        sep="\n"
+        sep='\n'
     )
